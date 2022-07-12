@@ -20,3 +20,4 @@ export class HeroesComponent implements OnInit {
     this.selectedHero = hero;
   }
 }
+// https://angular.io/tutorial/toh-pt2#final-code-review
