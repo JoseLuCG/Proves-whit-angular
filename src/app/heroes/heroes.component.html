@@ -1,7 +1,7 @@
 <h2>My heroes</h2>
 <ul class="heroes">
     <li *ngFor="let hero of heroes">
-        <button type="button">
+        <button type="button" (click)="onSelect(hero)">
             <span>{{hero.id}}</span>
             <span>{{hero.name}}</span>
         </button>
