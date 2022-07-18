@@ -31,4 +31,10 @@ hero: Hero | undefined;
   goBack():void {
     this.location.back();
   }
+  save(): void {
+    if (this.hero){
+      this.heroService.updateHero(this.hero)
+        .subscribe(()=> this.goBack());
+    }
+  }
 }
