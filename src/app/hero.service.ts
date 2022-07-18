@@ -9,15 +9,14 @@ import { MessageService } from './message.service';
 
 @Injectable({providedIn: 'root'})
 export class HeroService {
+  private heroesUrl = 'api/heroes';
 
   constructor(
     private http: HttpClient,
     private messageService: MessageService) {}
   
   getHeroes(): Observable<Hero[]> {
-    const heroes = of(HEROES);
-    this.messageService.add('HeroService: fetched heroes');
-    return heroes;
+    return this.http.get<Hero[]>(this.heroesUrl);
   }
   getHero(id:number): Observable<Hero> {
     const hero = HEROES.find(h => h.id === id)!;
